@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 
+console.log('starting...')
 fs.readFile('./content/first.txt', 'utf-8',(err, res)=>{
     if (err) {
         console.log(err)
@@ -23,8 +24,9 @@ fs.readFile('./content/first.txt', 'utf-8',(err, res)=>{
                     console.log(err)
                     return
                 }
-                console.log(res)
+                console.log('done with this task')
             }
         )
     })
 })
+console.log('starting the next task...')

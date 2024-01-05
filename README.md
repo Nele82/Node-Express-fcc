@@ -21,3 +21,9 @@ var data = fs.readFileSync('filename', 'utf8');
 console.log(data);
 
 In general, you should prefer to use readFile() (or other asynchronous methods) in a Node.js application, especially if it’s a web server, to avoid blocking the event loop. However, readFileSync() can be useful in certain situations where you need to read a file before your application can proceed.
+
+# Node.js built-in modules: HTTP
+
+## Response.end() method
+
+The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
