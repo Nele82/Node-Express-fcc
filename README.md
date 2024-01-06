@@ -1,6 +1,6 @@
 Node-Express-fcc (freeCodeCamp) tutorial 
 
-This README file serves as a reminder about all concepts covered in the tutorial.
+This README file serves as a reminder about concepts covered in the tutorial which occupied my attention.
 
 # Node.js built-in modules: FS
 
