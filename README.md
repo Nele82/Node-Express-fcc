@@ -34,4 +34,5 @@ These are, basically, outside solutions. They are not quality controlled and it'
 useful or not. 
 
 Main command to install it is 'npm install <packageName>' or short 'npm i <packageName>'
-If not indicated with '-g' command, Node.js will install the dependency as a local dependency.
+If not indicated with '-g' command, Node.js will install the dependency as a local dependency meaning it will only work in the project
+where it is installed.
