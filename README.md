@@ -1,5 +1,7 @@
 Node-Express-fcc (freeCodeCamp) tutorial 
 
+This README file serves as a reminder to all concepts covered by in the tutorial.
+
 # Node.js built-in modules: FS
 
 ## Difference between synchronous and asynchronous file reading methods
