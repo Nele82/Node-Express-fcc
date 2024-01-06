@@ -27,3 +27,11 @@ In general, you should prefer to use readFile() (or other asynchronous methods) 
 ## Response.end() method
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
+
+# Node.js third-party modules - dependencies
+
+These are, basically, outside solutions. They are not quality controlled and it's up to developers to assess whether they are
+useful or not. 
+
+Main command to install it is 'npm install <packageName>' or short 'npm i <packageName>'
+If not indicated with '-g' command, Node.js will install the dependency as a local dependency.
