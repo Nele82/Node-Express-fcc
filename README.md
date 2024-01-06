@@ -36,3 +36,7 @@ useful or not.
 Main command to install it is 'npm install <packageName>' or short 'npm i <packageName>'
 If not indicated with '-g' command, Node.js will install the dependency as a local dependency meaning it will only work in the project
 where it is installed.
+
+## Lodash
+
+'Lodash' is a popular JavaScript utility library that provides helpful methods for manipulation and combination of arrays, objects, strings, etc. It’s designed to make JavaScript easier by taking the hassle out of working with complex data structures.
