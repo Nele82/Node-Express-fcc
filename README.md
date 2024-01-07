@@ -24,11 +24,23 @@ console.log(data);
 
 In general, you should prefer to use readFile() (or other asynchronous methods) in a Node.js application, especially if it’s a web server, to avoid blocking the event loop. However, readFileSync() can be useful in certain situations where you need to read a file before your application can proceed.
 
+## fs.promises API
+
+fs.promises is an API provided by Node.js’s built-in fs (file system) module. It contains a subset of the methods available on fs, but these methods return Promises, making them suitable for use with async and await.
+
 # Node.js built-in modules: HTTP
 
 ## Response.end() method
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
+
+# Node.js built-in modules: UTIL
+
+The util module in Node.js is a built-in module that provides various utility functions. It’s often used for debugging, string formatting, type checking, and more. 
+
+## util.promisify(original) method
+
+This method takes a function following the common Node.js callback style and returns a version that returns promises.
 
 ## createServer() method, requestListener function & req.url property
 
