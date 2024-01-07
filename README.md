@@ -30,6 +30,12 @@ In general, you should prefer to use readFile() (or other asynchronous methods) 
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
 
+## createServer() method, requestListener function & req.url property
+
+In Node.js, the requestListener function is a function that is executed each time the server gets a request. This function is passed as a parameter to the http.createServer() method. The requestListener function handles requests (req) from the user, and also the response back to the user (res).
+
+The req.url property holds the part of the URL that comes after the domain name.
+
 # Node.js third-party modules - dependencies
 
 These are, basically, outside solutions. They are not quality controlled and it's up to developers to assess whether they are
@@ -46,3 +52,6 @@ where it is installed.
 ## Nodemon
 
 'Nodemon' is a utility that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. 
+
+
+
