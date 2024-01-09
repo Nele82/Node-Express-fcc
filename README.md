@@ -34,6 +34,12 @@ fs.promises is an API provided by Node.js’s built-in fs (file system) module. 
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
 
+## createServer() method, requestListener function & req.url property
+
+In Node.js, the requestListener function is a function that is executed each time the server gets a request. This function is passed as a parameter to the http.createServer() method. The requestListener function handles requests (req) from the user, and also the response back to the user (res).
+
+The req.url property holds the part of the URL that comes after the domain name.
+
 # Node.js built-in modules: UTIL
 
 The util module in Node.js is a built-in module that provides various utility functions. It’s often used for debugging, string formatting, type checking, and more. 
@@ -42,11 +48,32 @@ The util module in Node.js is a built-in module that provides various utility fu
 
 This method takes a function following the common Node.js callback style and returns a version that returns promises.
 
-## createServer() method, requestListener function & req.url property
+# Node.js built-in modules: EVENTS
 
-In Node.js, the requestListener function is a function that is executed each time the server gets a request. This function is passed as a parameter to the http.createServer() method. The requestListener function handles requests (req) from the user, and also the response back to the user (res).
+The events module in Node.js is a built-in module that provides a way of working with events. Certain kinds of objects, known as “emitters”, emit named events that cause Function objects, known as “listeners”, to be called. All events in Node.js are instances of the EventEmitter class.
 
-The req.url property holds the part of the URL that comes after the domain name.
+Syntax: const EventEmitter = require('events');  
+
+## eventEmitter.on() method
+
+The on() method is used to add a callback function that will be executed when a specific event is triggered. Here’s an example:
+
+eventEmitter.on('start', () => {  
+  console.log('started');  
+}); 
+
+## eventEmitter.emit() method
+
+The emit() method in Node.js is part of the EventEmitter class, which is used to handle events. The emit() method is used to trigger an event. You can pass arguments to the event handler by passing them as additional arguments to emit(). For example:
+
+const EventEmitter = require('node:events');    
+const eventEmitter = new EventEmitter();   
+
+eventEmitter.on('start', number => {  
+  console.log(`started ${number}`);  
+});  
+
+eventEmitter.emit('start', 23);  
 
 # Node.js third-party modules - dependencies
 
