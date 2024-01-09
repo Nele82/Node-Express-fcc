@@ -2,7 +2,7 @@ Node-Express-fcc (freeCodeCamp) tutorial
 
 This README file serves as a reminder about concepts covered in the tutorial which occupied my attention.
 
-# Node.js built-in modules: FS
+# BUILT-IN MODULES: FS
 
 ## Difference between synchronous and asynchronous file reading methods
 
@@ -28,7 +28,7 @@ In general, you should prefer to use readFile() (or other asynchronous methods) 
 
 fs.promises is an API provided by Node.js’s built-in fs (file system) module. It contains a subset of the methods available on fs, but these methods return Promises, making them suitable for use with async and await.
 
-# Node.js built-in modules: HTTP
+# BUILT-IN MODULES: HTTP
 
 ## Response.end() method
 
@@ -40,7 +40,7 @@ In Node.js, the requestListener function is a function that is executed each tim
 
 The req.url property holds the part of the URL that comes after the domain name.
 
-# Node.js built-in modules: UTIL
+# BUILT-IN MODULES: UTIL
 
 The util module in Node.js is a built-in module that provides various utility functions. It’s often used for debugging, string formatting, type checking, and more. 
 
@@ -48,7 +48,7 @@ The util module in Node.js is a built-in module that provides various utility fu
 
 This method takes a function following the common Node.js callback style and returns a version that returns promises.
 
-# Node.js built-in modules: EVENTS
+# BUILT-IN MODULES: EVENTS
 
 The events module in Node.js is a built-in module that provides a way of working with events. Certain kinds of objects, known as “emitters”, emit named events that cause Function objects, known as “listeners”, to be called. All events in Node.js are instances of the EventEmitter class.
 
@@ -75,7 +75,7 @@ eventEmitter.on('start', number => {
 
 eventEmitter.emit('start', 23);  
 
-# Node.js third-party modules - dependencies
+# THIRD PARTY MODULES - DEPENDENCIES
 
 These are, basically, outside solutions. They are not quality controlled and it's up to developers to assess whether they are
 useful or not. 
