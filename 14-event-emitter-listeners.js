@@ -20,4 +20,19 @@ customEmitter.emit('response', 'John', 34)
 
 // NOTE: Apart from the the named event, the 'emit' method can have multiple arguments, however they need to be defined as arguments
 // in the 'on' method's callback function as well in order to be available for the function.
-    
+
+// ----------------------------------------------------------------
+
+// Below is an example which demonstrates the ability of the server to use the 'on' method to listen for
+// the 'request' event which is emitted every time there is a request to, in this case, port 5000.
+
+// const http = require('http')
+// const server = http.createServer()
+
+// server.on('request', (req, res) => {
+//   res.end('Welcome')
+// })
+
+// server.listen(5000)
+
+// ----------------------------------------------------------------

@@ -36,7 +36,17 @@ The response.end() method in Node.js is a part of the HTTP module and is used to
 
 ## createServer() method, requestListener function & req.url property
 
-In Node.js, the requestListener function is a function that is executed each time the server gets a request. This function is passed as a parameter to the http.createServer() method. The requestListener function handles requests (req) from the user, and also the response back to the user (res).
+In Node.js, the requestListener function is a function that is executed each time the server gets a request. This function is passed as a parameter to the http.createServer() method. The requestListener function handles requests (req) from the user, and also the response back to the user (res). The variable that the http.createServer() method is assigned to is typically called a server. Here’s an example:
+
+var http = require('http');  
+
+var server = http.createServer(function (req, res) {  
+  res.writeHead(200, {'Content-Type': 'text/plain'});  
+  res.write('Hello World!');  
+  res.end();  
+});  
+
+server.listen(8080);  
 
 The req.url property holds the part of the URL that comes after the domain name.
 
