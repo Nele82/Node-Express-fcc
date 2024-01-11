@@ -28,6 +28,24 @@ In general, you should prefer to use readFile() (or other asynchronous methods) 
 
 fs.promises is an API provided by Node.js’s built-in fs (file system) module. It contains a subset of the methods available on fs, but these methods return Promises, making them suitable for use with async and await.
 
+## createReadStream() method
+
+The createReadStream() method is a part of the 'fs' module in Node.js which is used to open up a file or stream and read the data present in it. This method accepts two parameters:
+
+- path: This parameter holds the path of the file where to read the file. It can be a string, buffer, or URL.  
+- options: This is an optional parameter that holds a string or an object.  
+
+Syntax: fs.createReadStream(path, options)  
+
+Example:  
+
+let fs = require('fs');  
+let reader = fs.createReadStream('input.txt');  
+
+reader.on('data', function(chunk) {  
+  console.log(chunk.toString());  
+});  
+
 # BUILT-IN MODULES: HTTP
 
 ## Response.end() method
@@ -102,5 +120,14 @@ where it is installed.
 
 'Nodemon' is a utility that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. 
 
+# STREAMS IN NODE.JS
 
+Streams in Node.js are used to read and write data sequentially. Streams in Node.js are objects that allow you to read data from a source or write data to a destination in a continuous manner. They are a fundamental concept in Node.js and are used to handle reading/writing files, network communications, or any kind of end-to-end information exchange in an efficient way.
+
+There are four main types of streams in Node.js:  
+
+Writable: Streams to which data can be written. For example, fs.createWriteStream()  
+Readable: Streams from which data can be read. For example, fs.createReadStream()  
+Duplex: Streams that are both readable and writable. For example, net.Socket  
+Transform: Streams that can modify or transform the data as it is written and read. For example, zlib.createDeflate()  
 
