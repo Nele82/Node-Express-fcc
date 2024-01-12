@@ -46,6 +46,70 @@ reader.on('data', function(chunk) {
   console.log(chunk.toString());  
 });  
 
+## pipe() method
+
+The pipe() method was added in v0.9.4 of Node.js. Its purpose is to attach a writable stream to a readable stream, allowing data from the readable stream to be passed to the writable stream. This concept can be understood by thinking about connecting two PVC pipes: the first pipe is a readable stream, and the second pipe is a writable stream. The pipe() method acts as a fitting that connects both pipes, allowing data (or water, in the analogy) to flow from one pipe to another.
+
+Example:
+
+// Import the required modules  
+const http = require('http');  
+const fs = require('fs');  
+
+// Create the HTTP server  
+http.createServer(function(req, res) {  
+    // Read the content of the data.txt file using fs.createReadStream  
+    const readStream = fs.createReadStream('data.txt');  
+  
+    // Use the pipe() method to send the data to the response object  
+    readStream.pipe(res);  
+}).listen(8080); 
+
+## on() method (used with the with createReadStream() method)
+
+In Node.js, the on() method is used to register an event handler for a specific event. This method is part of Node’s EventEmitter class.The on() method is used with createReadStream() to handle different events like 'data', 'end', 'error', 'open' and other events.
+
+'data' event:
+
+let fs = require('fs');  
+reader = fs.createReadStream('input.txt');  
+  
+reader.on('data', function(chunk) {  
+  console.log(chunk.toString());  
+});  
+
+In this example, the ‘data’ event is fired whenever there is data available to read. The callback function is called with a chunk of data (as a Buffer) from the stream.
+
+'end' event:
+
+fs.createReadStream('/file').on('data', (row) => {  
+  // process row  
+}).on('end', () => {  
+  console.log('done processing!')  
+})  
+
+In this example, the ‘end’ event is fired when there is no more data to read from the stream.
+
+'error' event:  
+  
+let fs = require('fs');  
+let reader = fs.createReadStream('input.txt');  
+  
+reader.on('error', function(err) {  
+  console.log('Error: ', err);  
+});  
+
+'open' event:
+
+let fs = require('fs');  
+let reader = fs.createReadStream('input.txt');  
+  
+reader.on('open', function() {  
+  console.log('The file is open');  
+});  
+
+In this example, a message is logged to the console when ‘input.txt’ is opened.
+
 # BUILT-IN MODULES: HTTP
 
 ## Response.end() method

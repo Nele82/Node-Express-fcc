@@ -1,6 +1,6 @@
 const { createReadStream } = require('fs')
 
-const stream = createReadStream('./content/result-sync.txt', { highWaterMark: 90000, encoding: 'utf8'})
+const stream = createReadStream('./content/result-sync.txt', { highWaterMark: 90000, encoding: 'utf8' })
 
 // default buffer size is 64kb
 // last buffer - remainder
