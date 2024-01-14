@@ -222,3 +222,11 @@ Accept-Encoding: gzip, deflate
 Connection: Keep-Alive > > > HEADERS - TO HERE                                
                        > > > BLANK LINE  
 (name=value pairs of form data) > > > BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL) 
+
+## PORT
+
+In communication networking, a port is a communication endpoint. An HTTP port is a specific port number on a computer that is reserved for HTTP (Hypertext Transfer Protocol) traffic. Most popular protocols, like HTTP, have reserved ports for themselves. For example, the HTTP port is always port 80. These ports are always reserved for common protocols.
+
+When you access a website, your computer uses these port numbers to send and receive information. If the website is unencrypted, your computer uses port 80. If the website is encrypted (HTTPS), your computer uses port 443.
+
+These port numbers are part of the larger TCP/IP protocol, which is used for transmitting data over the internet. The Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP) only need one port for duplex, bidirectional traffic. They usually use port numbers that match the services of the corresponding TCP or UDP implementation, if they exist.
