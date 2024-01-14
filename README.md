@@ -214,11 +214,11 @@ The start-line and HTTP headers of the HTTP message are collectively known as th
 
 Here’s an example of an HTTP request message: 
 
-GET /path/to/file/index.html HTTP/1.0                       < START LINE 
-User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)  < HEADERS (FROM HERE) 
-Host: www.example.com                                       < 
-Accept-Language: en-us                                      < 
-Accept-Encoding: gzip, deflate                              < 
-Connection: Keep-Alive                                      < HEADERS (TO HERE) 
-                                                            < BLANK LINE 
-(name=value pairs of form data)                             < BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL) 
+START LINE                                               >     GET /path/to/file/index.html HTTP/1.0                      
+HEADERS (FROM HERE)                                      >     User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)  
+                                                         >     Host: www.example.com                                  
+                                                         >     Accept-Language: en-us                                   
+                                                         >     Accept-Encoding: gzip, deflate                              
+HEADERS (TO HERE)                                        >     Connection: Keep-Alive                                   
+BLANK LINE                                               >       
+BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL)   >     (name=value pairs of form data)                             
