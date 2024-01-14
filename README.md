@@ -195,3 +195,30 @@ Readable: Streams from which data can be read. For example, fs.createReadStream(
 Duplex: Streams that are both readable and writable. For example, net.Socket  
 Transform: Streams that can modify or transform the data as it is written and read. For example, zlib.createDeflate()  
 
+# SECTION: 4 - EXCHANGING DATA ON THE WEB
+
+When using a web browser by entering the URL address in a search bar, you are actually making a request to the server set up to serve
+the requested resources. This is done using the HTTP protocol. User sends an HTTP message (req) and then the server sends an HTTP response (res). 
+
+## HTTP message
+
+An HTTP message is a standard format for communication between a client and a server on the web. There are two types of HTTP messages:  requests sent by the client to trigger an action on the server (req), and responses, the answer from the server (res).   
+
+HTTP messages are composed of textual information encoded in ASCII, and span over multiple lines. They consist of:   
+
+- A START-LINE describing the requests to be implemented, or its status of whether successful or a failure;
+- An optional set of HTTP HEADERS specifying the request, or describing the body included in the message;  
+- A BLANK LINE indicating all meta-information for the request has been sent (the meta-information in an HTTP message refers to the set of HTTP headers that come before the blank line);  
+- An optional BODY containing data associated with the request (like content of an HTML form), or the document associated with a    response. The presence of the body and its size is specified by the start-line and HTTP headers.   
+The start-line and HTTP headers of the HTTP message are collectively known as the head of the requests, whereas its payload is known as the body; 
+
+Here’s an example of an HTTP request message: 
+
+GET /path/to/file/index.html HTTP/1.0                       < START LINE 
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)  < HEADERS (FROM HERE) 
+Host: www.example.com                                       < 
+Accept-Language: en-us                                      < 
+Accept-Encoding: gzip, deflate                              < 
+Connection: Keep-Alive                                      < HEADERS (TO HERE) 
+                                                            < BLANK LINE 
+(name=value pairs of form data)                             < BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL) 
