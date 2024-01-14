@@ -212,13 +212,13 @@ HTTP messages are composed of textual information encoded in ASCII, and span ove
 - An optional BODY containing data associated with the request (like content of an HTML form), or the document associated with a    response. The presence of the body and its size is specified by the start-line and HTTP headers.   
 The start-line and HTTP headers of the HTTP message are collectively known as the head of the requests, whereas its payload is known as the body; 
 
-Here’s an example of an HTTP request message: 
+Here’s an example of an HTTP request message:   
 
-START LINE                                               >     GET /path/to/file/index.html HTTP/1.0                      
-HEADERS (FROM HERE)                                      >     User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)  
-                                                         >     Host: www.example.com                                  
-                                                         >     Accept-Language: en-us                                   
-                                                         >     Accept-Encoding: gzip, deflate                              
-HEADERS (TO HERE)                                        >     Connection: Keep-Alive                                   
-BLANK LINE                                               >       
-BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL)   >     (name=value pairs of form data)                             
+GET /path/to/file/index.html HTTP/1.0 > > > START LINE                     
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT) > > > HEADERS - FROM HERE  
+Host: www.example.com                                    
+Accept-Language: en-us                                     
+Accept-Encoding: gzip, deflate                                
+Connection: Keep-Alive > > > HEADERS - TO HERE                                
+                       > > > BLANK LINE  
+(name=value pairs of form data) > > > BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL) 
