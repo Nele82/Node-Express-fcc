@@ -112,6 +112,13 @@ In this example, a message is logged to the console when ‘input.txt’ is open
 
 # BUILT-IN MODULES: HTTP
 
+The built-in HTTP module in Node.js allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP). It’s designed to support many features of the protocol which have been traditionally difficult to use. Here are some key points about the HTTP module:
+
+- It provides the ability to create an HTTP server that listens to server ports and gives a response back to the client.
+- It supports large, possibly chunk-encoded, messages.
+- It includes classes like http.Agent, http.ClientRequest, http.Server, http.ServerResponse, http.IncomingMessage, and http.OutgoingMessage.
+- It provides methods for handling HTTP requests and responses, such as request.end(), request.write(), response.setHeader(), response.writeHead(), and many more.
+
 ## Response.end() method
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
