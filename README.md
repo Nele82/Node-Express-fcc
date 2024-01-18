@@ -139,6 +139,17 @@ server.listen(8080);
 
 The req.url property holds the part of the URL that comes after the domain name.
 
+## Response.writeHead() method
+
+ The response.writeHead() method is a part of the http module in Node.js. It’s used to send a response header to the incoming request. Here’s a more detailed breakdown:
+
+Syntax: response.writeHead(statusCode [, statusMessage] [, headers]).
+Parameters:
+
+statusCode <number>: This accepts the status codes that are of number type.
+statusMessage <string>: This accepts any string that shows the status message.
+headers <Object>: This accepts any function, array, or string.
+
 # BUILT-IN MODULES: UTIL
 
 The util module in Node.js is a built-in module that provides various utility functions. It’s often used for debugging, string formatting, type checking, and more. 
