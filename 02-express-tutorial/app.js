@@ -1,63 +1,20 @@
-const http = require('http')
-const {readFileSync} = require('fs')
+const express = require('express')
+const path = require('path')
+const app = express()
 
-// get all files
-const homePage = readFileSync('./navbar-app/index.html')
-const homeStyles = readFileSync('./navbar-app/styles.css')
-const homeImage = readFileSync('./navbar-app/logo.svg')
-const homeLogic = readFileSync('./navbar-app/browser-app.js')
+app.use(express.static('./public'))
 
-const server = http.createServer((req, res) => {
-    console.log(req.url)
+// app.get('/', (req, res) => {
+//    res.sendFile(path.resolve(__dirname, 'navbar-app/index.html'))
+//     Adding to static assets
 
-    // Home page
-    if(req.url == '/') {
-        res.writeHead(200, {
-            'content-type': 'text/html'
-        })
-        res.write(homePage)
-        res.end()
-    
-    // About page
-    } else if (req.url == '/about') {
-        res.writeHead(200, {
-            'content-type': 'text/html'
-        })
-        res.write('<h1>About page</h1>')
-        res.end();
-    
-    // Styles
-    } else if (req.url == '/styles.css') {
-        res.writeHead(200, {
-            'content-type': 'text/css'
-        })
-        res.write(homeStyles)
-        res.end();
-    
-    // Logo
-    } else if (req.url == '/logo.svg') {
-        res.writeHead(200, {
-            'content-type': 'image/svg+xml'
-        })
-        res.write(homeImage)
-        res.end();
-    
-    // Browser logic
-    } else if (req.url == '/browser-app.js') {
-        res.writeHead(200, {
-            'content-type': 'text/javascript'
-        })
-        res.write(homeLogic)
-        res.end();
-    
-    // 404
-    } else {
-        res.writeHead(404, {
-            'content-type': 'text/html'
-        })
-        res.write('<h1>Page not found!</h1>')
-        res.end();
-    }   
+
+// })
+
+app.all('*', (req, res) => {
+    res.status(404).send('Requested resource has not been found.')
 })
 
-server.listen(5000)
+app.listen(5000, ()=>{
+    console.log('Server listening on port 5000')
+})

@@ -241,6 +241,21 @@ Connection: Keep-Alive > > > HEADERS - TO HERE
                        > > > BLANK LINE  
 (name=value pairs of form data) > > > BODY OF THE MESSAGE (CONTAINS DATA AND IT'S OPLTIONAL) 
 
+## HTTP verbs
+
+HTTP verbs, also known as HTTP request methods, indicate the desired action to be performed for a given resource. Here are the most common HTTP verbs:
+
+- GET: Requests a representation of the specified resource. Requests using GET should only retrieve data. 
+- HEAD: Asks for a response identical to a GET request, but without the response body. 
+- POST: Submits an entity to the specified resource, often causing a change in state or side effects on the server. 
+- PUT: Replaces all current representations of the target resource with the request payload. 
+- DELETE: Deletes the specified resource. 
+- CONNECT: Establishes a tunnel to the server identified by the target resource. 
+- OPTIONS: Describes the communication options for the target resource. 
+- TRACE: Performs a message loop-back test along the path to the target resource. 
+- PATCH: Applies partial modifications to a resource. 
+Each of these methods implements a different semantic, but some common features are shared by a group of them. For example, a request method can be safe, idempotent, or cacheable. 
+
 ## PORT
 
 In communication networking, a port is a communication endpoint. An HTTP port is a specific port number on a computer that is reserved for HTTP (Hypertext Transfer Protocol) traffic. Most popular protocols, like HTTP, have reserved ports for themselves. For example, the HTTP port is always port 80. These ports are always reserved for common protocols.
@@ -251,4 +266,90 @@ These port numbers are part of the larger TCP/IP protocol, which is used for tra
 
 # EXPRESS
 
-Express.js is a small, fast, and unopinionated framework that works on top of Node.js web server functionality to simplify its APIs and add helpful new features. 
+Express.js is a popular web framework for Node.js, designed for building web applications and APIs. It’s a small, fast, and un-opinionated framework that works on top of Node.js web server functionality to simplify its APIs and add helpful new features. 
+
+Here are some key features of Express.js:
+
+- Simplicity: Building a backend from scratch in Node.js can be tedious and time-consuming. Express.js simplifies this process by providing a robust set of features. 
+- Routing: Express.js provides methods to specify what function is called for a particular HTTP verb (GET, POST, PUT, etc.) and URL pattern. Here’s an example of an Express route: 
+
+JavaScript 
+
+const express = require('express'); 
+const app = express(); 
+const port = 3000; 
+
+app.get('/', (req, res) => res.send('Hello World!')); 
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:$ {port}`)); 
+
+- Middleware: Express.js allows for operations to be performed on requests and responses moving through the routes. Middleware can be applied at both the application and route levels and can be chained together. 
+- Un-opinionated: Express.js doesn’t enforce a particular code structure, giving developers the freedom to structure their code how they choose.
+
+## Express.js routing
+
+Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on). Each route can have one or more handler functions, which are executed when the route is matched.
+
+Route definition takes the following structure:
+
+app.METHOD(PATH, HANDLER)
+
+## Middleware in Express.js
+
+In Express.js, middleware is a series of functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+
+Middleware functions can perform the following tasks:
+
+- Execute any code. 
+- Make changes to the request and the response objects. 
+- End the request-response cycle. 
+- Call the next middleware function in the stack. 
+- If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging. 
+
+An Express application can use the following types of middleware:
+
+- Application-level middleware  
+- Router-level middleware  
+- Error-handling middleware  
+- Built-in middleware  
+- Third-party middleware  
+
+# APPLICATION LEVEL MIDDLEWARE
+
+## use() function
+
+The app.use() function in Express.js is a middleware function that is used to mount the specified middleware function(s) at the path that is being specified. It is mostly used to set up middleware for your application.
+
+Syntax: app.use(path, callback)
+
+- path: It is the path for which the middleware function is being called. It can be a string representing a path or path pattern or a regular expression pattern to match the paths.
+- callback: It is a middleware function or a series/array of middleware functions.
+
+const express = require('express'); 
+const app = express(); 
+const PORT = 3000; 
+
+app.use(function (req, res, next) { 
+  console.log("Middleware called"); 
+  next(); 
+}); 
+
+app.get('/user', function (req, res) { 
+  console.log("/user request called"); 
+  res.send('Welcome to GeeksforGeeks'); 
+}); 
+
+app.listen(PORT, function (err) { 
+  if (err) console.log(err); 
+  console.log(`Server listening on PORT ${PORT}`); 
+}); 
+
+# BUILT-IN MIDDLEWARE
+
+## express.static() function
+
+It is used to serve static files such as images, CSS files, and JavaScript files.
+
+Syntax: express.static(root, [options]) 
+
+The root argument specifies the root directory from which to serve static assets.
