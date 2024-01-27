@@ -21,3 +21,6 @@ app.get('/api/items', (req, res)=>{
 app.listen(5000, ()=>{
     console.log('Server is listening on port 5000')
 })
+
+// A 'use()' function (app level middleware) could be used to apply a middleware function to the whole application, 
+// however it needs to be applied before route handlers as middleware functions need to be declared first.
