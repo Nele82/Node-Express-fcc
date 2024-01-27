@@ -119,6 +119,29 @@ The built-in HTTP module in Node.js allows Node.js to transfer data over the Hyp
 - It includes classes like http.Agent, http.ClientRequest, http.Server, http.ServerResponse, http.IncomingMessage, and http.OutgoingMessage.
 - It provides methods for handling HTTP requests and responses, such as request.end(), request.write(), response.setHeader(), response.writeHead(), and many more.
 
+## Response.send() function
+
+The send() function is used to send the HTTP response. The body parameter can be a String, a Buffer object, an Object, or an Array. 
+
+Syntax: res.send([body])
+
+Example:
+
+const express = require('express'); 
+const app = express(); 
+const PORT = 3000; 
+
+app.get('/', function(req, res) { 
+    res.send({ title: 'GeeksforGeeks' }); 
+}); 
+
+app.listen(PORT, function(err) { 
+    if (err) console.log(err); 
+    console.log("Server listening on PORT", PORT); 
+}); 
+
+In this example, when you navigate to the root URL (http://localhost:3000/), the server will respond with a JSON object { title: 'GeeksforGeeks' }.
+
 ## Response.end() method
 
 The response.end() method in Node.js is a part of the HTTP module and is used to signal to the server that all of the response headers and body have been sent, and that the server should consider this message complete.
