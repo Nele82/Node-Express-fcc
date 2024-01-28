@@ -28,5 +28,5 @@ app.listen(5000, ()=>{
 //     res.send('Home')  <<< It's code (Sending a "Home" string as a response)
 // })
 
-// In other words, when a middleware function does not end the request-response cycle, it must call 'next()' to pass 
+// In other words, when a middleware function does not end the request-response cycle, it must call the 'next()' function to pass 
 // control to the next middleware function. Otherwise, the request will be left hanging or pending, hence the browser keeps spinning.
