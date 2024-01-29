@@ -376,3 +376,17 @@ It is used to serve static files such as images, CSS files, and JavaScript files
 Syntax: express.static(root, [options]) 
 
 The root argument specifies the root directory from which to serve static assets.
+
+## express.urlencoded() function
+
+The express.urlencoded() function is used to parse incoming request payloads that are URL-encoded (URL encoded bodies). This means 
+it’s a function that has access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+
+Example:
+
+app.post('/', function(req, res) { 
+  console.log(req.body); 
+  res.end();
+}); 
+
+In this example, req.body will contain the data sent in the POST request. The express.urlencoded() middleware function parses the incoming request data and populates req.body.
