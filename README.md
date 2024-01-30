@@ -390,3 +390,9 @@ app.post('/', function(req, res) {
 }); 
 
 In this example, req.body will contain the data sent in the POST request. The express.urlencoded() middleware function parses the incoming request data and populates req.body.
+
+## express.json() function
+
+It parses incoming requests with JSON payloads. It, also, returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.
+
+A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.

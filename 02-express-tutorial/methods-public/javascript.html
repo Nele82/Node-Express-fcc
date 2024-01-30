@@ -48,7 +48,9 @@
 
       const fetchPeople = async () => {
         try {
-          const { data } = await axios.get('/api/people')
+          const { data } = await axios.get('/api/people') // In Axios, the 'data' property is used to access the payload 
+          // of the server’s response. When you make a request with Axios, it returns a response object, and the actual 
+          // data from the server is contained within the 'data' property of this object.
 
           const people = data.data.map((person) => {
             return `<h5>${person.name}</h5>`
@@ -59,6 +61,7 @@
         }
       }
       fetchPeople()
+
       // submit form
       const btn = document.querySelector('.submit-btn')
       const input = document.querySelector('.form-input')
@@ -72,6 +75,7 @@
           const h5 = document.createElement('h5')
           h5.textContent = data.person
           result.appendChild(h5)
+          formAlert.textContent = ''
         } catch (error) {
           // console.log(error.response)
           formAlert.textContent = error.response.data.msg

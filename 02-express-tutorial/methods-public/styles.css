@@ -343,7 +343,6 @@ h5 + h5 {
 }
 .form-alert {
   color: var(--red-dark);
-  text-transform: capitalize;
 }
 .alert-danger {
   width: 600px;
