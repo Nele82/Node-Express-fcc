@@ -396,3 +396,32 @@ In this example, req.body will contain the data sent in the POST request. The ex
 It parses incoming requests with JSON payloads. It, also, returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.
 
 A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.
+
+# ROUTER-LEVEL MIDDLEWARE
+
+## express.Router() function
+
+The express.Router() function in Express.js is a middleware that allows you to group route handlers for a particular part of a site together and access them using a common route-prefix.
+
+Example:  
+
+const express = require('express')  
+const router = express.Router()  
+
+// middleware that is specific to this router  
+router.use((req, res, next) => {  
+  console.log('Time: ', Date.now())  
+  next()  
+})  
+
+// define the home page route  
+router.get('/', (req, res) => {  
+  res.send('Home page')  
+})  
+
+// define the about route  
+router.get('/about', (req, res) => {  
+  res.send('About page')  
+})  
+
+
