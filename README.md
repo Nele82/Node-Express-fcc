@@ -393,7 +393,7 @@ In this example, req.body will contain the data sent in the POST request. The ex
 
 ## express.json() function
 
-It parses incoming requests with JSON payloads. It, also, returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.
+It parses incoming requests with JSON payloads. It, also, returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option. If you were to send a POST request with a JSON object, the express.json() middleware function would parse it and make it accessible through req.body. The server would then send back a response containing the received object. This is particularly useful when you’re building APIs or web applications that need to handle JSON data. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings. 
 
 A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.
 
